@@ -11,12 +11,12 @@ function Login(){
         <Grid alignItems='center' xs={6}>
             <Box paddingX={20}>
                 <form>
-                    <Typography variant ='h3'gutterBottom component='h3' align='center'style={{fontWeight:'bold'}}>Entrar</Typography>
-                    <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                    <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
+                    <Typography variant ='h4'gutterBottom component='h4' align='center' className='textos1'>Entrar</Typography>
+                    <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth size='small'/>
+                    <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth size='small' />
                     <Box marginTop={2} textAlign={'center'}>
                         <Link to='/home' className='text-decorator-none'>
-                        <Button type='submit' variant='contained' className='button'>
+                        <Button type='submit' variant='contained' className='button' fullWidth>
                             Logar
                         </Button>
                         </Link>
@@ -26,7 +26,7 @@ function Login(){
                     <Box marginRight={1}>
                         <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                     </Box>
-                    <Typography variant='subtitle1' gutterBottom align='center' style={{fontWeight:'bold'}}>Cadastre-se</Typography>
+                    <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                 </Box>
             </Box>
         </Grid>
