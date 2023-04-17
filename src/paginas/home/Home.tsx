@@ -10,7 +10,7 @@ function Home(){
         direction="row" 
         justifyContent="center" 
         alignItems="center"
-         className='caixa'>
+        className='caixa'>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography 

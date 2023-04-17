@@ -33,13 +33,13 @@ function Footer(){
                             <a
                             href="https://github.com/ElizangelaXavierS" 
                             target="_blank">
-                                <GitHubInIcon className='.redes'/>
+                                <GitHubInIcon className='redes'/>
                             </a>
                             
                             <a 
                             href="https://www.linkedin.com/in/elizangelaxavier/" 
                             target="_blank">
-                                <LinkedInIcon className='.redes'/>
+                                <LinkedInIcon className='redes'/>
                             </a>
                         </Box>
                     </Box>

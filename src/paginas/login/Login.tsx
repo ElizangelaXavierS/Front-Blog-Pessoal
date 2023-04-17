@@ -2,6 +2,7 @@ import {Button, Grid, TextField, Typography } from '@material-ui/core';
 import './Login.css';
 import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import './Login.css'
 
 
 function Login(){
@@ -18,7 +19,6 @@ function Login(){
                     gutterBottom 
                     component='h4' 
                     align='center' 
-                    className='textos1'
                     >
                         Entrar
                     </Typography>
@@ -57,19 +57,22 @@ function Login(){
                         <Typography 
                         variant='subtitle1' 
                         gutterBottom align='center'
+                        
                         >
                             Ainda não tem uma conta?
                         </Typography>
                     </Box>
-
-                    <Typography 
-                    variant='subtitle1' 
-                    gutterBottom align='center' 
-                    className='textos1'
-                    >
-                        Cadastre-se
-                    </Typography>
-                </Box>
+                        <Link to='/cadastrousuario'>
+                            <Typography 
+                            variant='subtitle1' 
+                            gutterBottom align='center' 
+                            className='textosLogin'
+                            >
+                            Cadastre-se
+                            </Typography>
+                        
+                        </Link>
+                    </Box>
             </Box>
         </Grid>
         <Grid xs={6} className='imagemLogin'>
