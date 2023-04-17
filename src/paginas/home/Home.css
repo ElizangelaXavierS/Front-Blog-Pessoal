@@ -13,6 +13,12 @@
     background-color: #ffb6c1 !important;
      color: white !important;
 }
+.fotoHome {
+    width: max(350px, 65%);
+    margin: 0 auto;
+    display: block;
+    transform: rotateY(180deg);
+  }
 .postagens{
     background-color: white !important;
 }
