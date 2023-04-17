@@ -57,7 +57,8 @@ function Footer(){
                         <Box >
                             <a 
                             href="https://brasil.generation.org"
-                            target="_blank"                                                        
+                            target="_blank"
+                            className='text-decorator-none'                                                        
                             >
                                 <Typography 
                                 variant="subtitle2" 

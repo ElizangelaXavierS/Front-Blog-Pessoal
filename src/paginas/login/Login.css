@@ -2,15 +2,14 @@
     background-color: #ffb6c1 !important;
 }
 .button:hover{
-    background-color: #f14b64;
+    background-color: #746769 !important;
 }
 .text-decorator-none{
     text-decoration:none;
 }
-.imagem{
+.imagemLogin{
     background-image: url(https://i.imgur.com/ceY3WD1.png);
     background-repeat: no-repeat;
-    width: 100vh;
     min-height: 100vh;
     background-size: cover;
     background-position: center;

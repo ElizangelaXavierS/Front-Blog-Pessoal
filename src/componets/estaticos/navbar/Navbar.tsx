@@ -34,7 +34,7 @@ function Navbar(){
                         
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Cadastrar tema
+                                CadastrarTema
                             </Typography>
                         </Box>
                         <Link to="/login" className="text-decorator-none">
