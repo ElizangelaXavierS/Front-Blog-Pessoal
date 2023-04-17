@@ -11,13 +11,14 @@
 .botao{
     border-color: white !important;
     background-color: #ffb6c1 !important;
-     color: white !important;
+    color: white !important;
+    border-radius: 15px!important;
 }
 .fotoHome {
     width: max(350px, 65%);
     margin: 0 auto;
     display: block;
-    transform: rotateY(180deg);
+    
   }
 .postagens{
     background-color: white !important;
