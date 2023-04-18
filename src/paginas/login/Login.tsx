@@ -4,7 +4,7 @@ import './Login.css';
 import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { api } from '../../services/Service';
+import { login } from '../../services/Service';
 import './Login.css'
 import UserLogin from '../../models/UserLogin';
 
@@ -34,13 +34,12 @@ function Login(){
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
         try {
-            const resposta = await api.post('/usuarios/logar', userLogin,)
-            setToken(resposta.data.token)
-        alert('Usuario logado com sucesso')
-    
+            await login('/usuarios/logar', userLogin, setToken)
+            alert('Usuario logado com sucesso')                 
         } catch(error) {
-        alert('Usuário ou senha inválidos')
-        }    
+            console.log(error);
+            alert('Usuário ou senha inválidos')
+        }  
     }
 
     useEffect(() => {
