@@ -4,9 +4,8 @@
 .button:hover{
     background-color: #746769 !important;
 }
-.text-decorator-none{
-    text-decoration:none;
-}
+
+
 .imagemLogin{
     background-image: url(https://i.imgur.com/ceY3WD1.png);
     background-repeat: no-repeat;
