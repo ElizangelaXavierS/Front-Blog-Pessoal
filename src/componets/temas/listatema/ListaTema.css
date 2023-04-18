@@ -1,3 +1,17 @@
 .text-decorator-none{
     text-decoration: none;
 }
+.btnAtualizarTema{
+    background-color: #d886f8 !important;
+}
+.btnAtualizarTema:hover{
+    background-color: #85787a !important;
+}
+
+.btndeletarTema{
+    background-color: #e68795 !important;
+    color:white !important;
+}
+.btndeletarTema:hover{
+    background-color: #85787a !important;
+}

@@ -1,3 +1,19 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.btnAtualizarPos{
+    background-color: #d886f8 !important;
+
+}
+.btnAtualizarPos:hover{
+    background-color: #85787a !important;
+}
+
+.btndeletarpos{
+    background-color: #e68795 !important;
+    color:white !important;
+}
+.btndeletarpos:hover{
+    background-color: #85787a !important;
+}

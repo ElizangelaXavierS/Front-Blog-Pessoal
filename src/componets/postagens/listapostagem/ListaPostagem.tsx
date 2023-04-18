@@ -27,15 +27,15 @@ function ListaPostagem() {
                         <Box display="flex" justifyContent="center" mb={1.5}>
 
                             <Link to="" className="text-decorator-none" >
-                                <Box mx={1}>
-                                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                <Box mx={1} >
+                                    <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
                                         atualizar
                                     </Button>
                                 </Box>
                             </Link>
                             <Link to="" className="text-decorator-none">
                                 <Box mx={1}>
-                                    <Button variant="contained" size='small' color="secondary">
+                                    <Button variant="contained" size='small' className='btndeletarpos'>
                                         deletar
                                     </Button>
                                 </Box>
