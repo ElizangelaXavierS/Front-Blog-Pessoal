@@ -160,9 +160,9 @@ function CadastroUsuario() {
                                 Cadastrar
                             </Button>
                             
-                           <Button  onClick={back} size='large' variant='contained' className='btnCancelar'>
+                            <Button  onClick={back} size='large' variant='contained' className='btnCancelar'>
                                 Cancelar
-                           </Button>                      
+                            </Button>                      
 
                         </Box>
                     </form>
