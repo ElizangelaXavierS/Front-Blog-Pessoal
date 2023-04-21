@@ -20,7 +20,7 @@ function App() {
     <Route path="/home" element={<Home />} />
     <Route path="/cadastrousuario" element={<CadastroUsuario />} />
     <Route path="/temas" element={<ListaTema />} />
-    <Route path="/postagem" element={<ListaPostagem />} />
+    <Route path="/posts" element={<ListaPostagem />} />
   
     </Routes>
     </div>
