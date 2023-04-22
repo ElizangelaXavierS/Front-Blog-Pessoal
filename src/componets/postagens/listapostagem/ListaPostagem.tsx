@@ -26,7 +26,6 @@ function ListaPostagem() {
                 'Authorization': token
             }
         })
-
     }
 
     useEffect(() => {
