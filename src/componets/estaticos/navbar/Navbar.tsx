@@ -57,7 +57,7 @@ function Navbar() {
 
                     <Box mx={1} className='cursor' onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
-                            Logout
+                            Sair
                         </Typography>
                     </Box>
 

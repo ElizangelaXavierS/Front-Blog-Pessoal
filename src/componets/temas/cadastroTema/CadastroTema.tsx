@@ -30,7 +30,7 @@ function CadastroTema() {
     }, [id]);
 
     async function findById(id: string){
-        buscarId(`/tema${id}`, setTema, {
+        buscarId(`/temas/${id}`, setTema, {
             headers: {
                 "Authorization" : token
             }
@@ -50,27 +50,26 @@ function CadastroTema() {
 
         if (id !== undefined) {
             console.log(tema)
-            put(`/tema`, tema, setTema, {
+            put(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema atualizado com sucesso');
         } else {
-            post(`/tema`, tema, setTema, {
+            post(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema cadastrado com sucesso');
         }
-        voltaTemas()
+        back()
     }
 
-    function voltaTemas() {
+    function back() {
         history('/temas')
     }
-    
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
@@ -94,7 +93,7 @@ function CadastroTema() {
                 fullWidth 
                 />
                 <Button type="submit" variant="contained" color="primary">
-                    Finalizar
+                    Enviar
                 </Button>
             </form>
         </Container>
