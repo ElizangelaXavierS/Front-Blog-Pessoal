@@ -2,6 +2,7 @@ import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import './Home.css';
 import TabPostagem from '../../componets/postagens/tabpostagem/TabPostagem';
+import ModalPostagem from '../../componets/postagens/modalpostagem/ModalPostagem';
 
 function Home(){
     return(
@@ -35,7 +36,9 @@ function Home(){
                             </Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}></Box>
+                        <Box marginRight={1}>
+                            <ModalPostagem/>
+                        </Box>
 
                         <Button 
                         variant="outlined" 

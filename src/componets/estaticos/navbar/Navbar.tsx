@@ -26,7 +26,7 @@ function Navbar() {
                     <Link to="/home" className="text-decorator-none">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Home
+                                Página Inicial
                             </Typography>
                         </Box>
                     </Link>
@@ -50,7 +50,7 @@ function Navbar() {
                     <Link to="/formularioTema" className="text-decorator-none">
                         <Box mx={1} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                CadastrarTema
+                                Cadastrar Tema
                             </Typography>
                         </Box>
                     </Link>
