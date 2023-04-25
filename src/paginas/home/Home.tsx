@@ -3,8 +3,23 @@ import {Box} from '@mui/material';
 import './Home.css';
 import TabPostagem from '../../componets/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../componets/postagens/modalpostagem/ModalPostagem';
+import {  useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useEffect } from 'react';
 
 function Home(){
+    const history = useNavigate();
+    const token = useSelector<TokenState, TokenState["token"]>(
+        (state) => state.token
+    );
+
+useEffect(() => {
+    if(token === ''){
+        alert("Você não está logado!")
+        history("/login")
+    }
+}, [token])
     return(
         <>
         <Grid container 
@@ -12,7 +27,7 @@ function Home(){
         justifyContent="center" 
         alignItems="center"
         className='caixa'>
-                <Grid alignItems="center" item xs={6}>
+                <Grid alignItems="center" item xs={6} >
                     <Box paddingX={20} >
                         <Typography 
                         variant="h3" 

@@ -1,11 +1,15 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Taprom&display=swap');
+
 .caixa{
     background-color:#fdcad2 ;
 
 }
 .titulo{
-    color: white!important;
-    font-weight: bold !important;
+    color: white!important;    
+    font-family: 'Roboto', sans-serif !important;
+    
+
 }
 
 .botao{

@@ -4,12 +4,15 @@ import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/
 import {Box} from '@mui/material';
 import './ListaTema.css';
 import Tema from '../../../models/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import { buscar } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+);
   const history = useNavigate();
 
   useEffect(() =>{
@@ -52,14 +55,14 @@ function ListaTema() {
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" className='btnAtualizarTema' size='small' color="primary" >
-                    atualizar
+                    Editar
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletarTema/${tema.id}`}  className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' className='btndeletarTema'>
-                    deletar
+                    Deletar
                   </Button>
                 </Box>
               </Link>

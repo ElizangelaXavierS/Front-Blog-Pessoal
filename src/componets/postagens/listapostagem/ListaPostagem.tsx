@@ -3,14 +3,17 @@ import { Card, CardActions, CardContent, Button, Typography } from '@material-ui
 import { Box } from '@mui/material';
 import './ListaPostagem.css';
 import Postagem from '../../../models/Postagem';
-import useLocalStorage from 'react-use-localstorage';
 import { buscar } from '../../../services/Service';
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function ListaPostagem() {
     const [postagens, setPostagem] = useState<Postagem[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["token"]>(
+        (state) => state.token
+    );
     const history = useNavigate();
 
     useEffect(() => {
@@ -50,6 +53,9 @@ function ListaPostagem() {
                                 <Typography variant="body2" component="p">
                                     {postagem.tema?.descricao}
                                 </Typography>
+                                <Typography variant="body2" component="p">               
+                                    Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
+                                </Typography>
                             </CardContent>
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5}>
@@ -57,14 +63,14 @@ function ListaPostagem() {
                                     <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
                                         <Box mx={1} >
                                             <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
-                                                atualizar
+                                                Editar
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarPostagem/${postagem.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" size='small' className='btndeletarpos'>
-                                                deletar
+                                                Deletar
                                             </Button>
                                         </Box>
                                     </Link>

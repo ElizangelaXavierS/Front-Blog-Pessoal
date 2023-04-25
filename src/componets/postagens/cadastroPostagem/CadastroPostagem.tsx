@@ -2,18 +2,22 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPostagem.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import './CadastroPostagem.css'
 import { buscar, buscarId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function CadastroPostagem() { 
     const history = useNavigate();
     const {id} = useParams<{id:string}>();
     const [temas, setTemas] = useState<Tema[]>([]);
-    const [token, setToken]= useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["token"]>(
+        (state) => state.token
+    );
 
         useEffect(() => {
             if(token === ""){
@@ -115,7 +119,7 @@ function CadastroPostagem() {
                 component="h1" 
                 align="center" 
                 >
-                    Cadastrar Postagem
+                {tema.id !== 0 ? 'Editar postagem' : 'Cadastrar postagem'}
                 </Typography>
                 <TextField 
                 value={postagem.titulo}
