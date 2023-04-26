@@ -3,7 +3,7 @@ import {Box} from '@mui/material';
 import './Home.css';
 import TabPostagem from '../../componets/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../componets/postagens/modalpostagem/ModalPostagem';
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { useEffect } from 'react';
@@ -54,13 +54,14 @@ useEffect(() => {
                         <Box marginRight={1}>
                             <ModalPostagem/>
                         </Box>
-
+                        <Link to="/postagens">
                         <Button 
                         variant="outlined" 
                         className='botao'
                         >
                             Ver Postagens
                         </Button>
+                        </Link>
                     </Box>
 
                 </Grid>

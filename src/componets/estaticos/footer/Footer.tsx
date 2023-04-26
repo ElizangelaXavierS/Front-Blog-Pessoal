@@ -4,76 +4,87 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 import'./Footer.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function Footer(){
-    return(
-    <>
-        <Grid container
-            direction="row" 
-            justifyContent="center" 
-            alignItems="center">
-                <Box display={'flex'} alignItems="center" className='box1'>
-                    <Box >
-                        <Box paddingTop={1}
-                        display="flex" 
-                        alignItems="center" 
-                        justifyContent="center"
-                        >
-                            <Typography 
-                            variant="h5" 
-                            align="center" 
-                            gutterBottom 
-                            className='textos'
-                            >
-                                Acompanhe minhas redes 
-                                </Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
-                            <a
-                            href="https://github.com/ElizangelaXavierS" 
-                            target="_blank">
-                                <GitHubInIcon className='redes'/>
-                            </a>
-                            
-                            <a 
-                            href="https://www.linkedin.com/in/elizangelaxavier/" 
-                            target="_blank">
-                                <LinkedInIcon className='redes'/>
-                            </a>
-                        </Box>
-                    </Box>
-                    <Box className='box2'>
-                        <Box paddingTop={1}>
-                            <Typography 
-                            variant="subtitle2" 
-                            align="center" 
-                            gutterBottom className='textos'
-                            >
-                                © 2020 Copyright:
-                            </Typography>
-                        </Box>
+    const token = useSelector<TokenState, TokenState["token"]>(
+        (state) => state.token
+    );
 
-                        <Box >
-                            <a 
-                            href="https://brasil.generation.org"
-                            target="_blank"
-                            className='text-decorator-none'                                                        
-                            >
-                                <Typography 
-                                variant="subtitle2" 
-                                gutterBottom 
-                                className='textos' 
-                                align="center"
-                                >
-                                    brasil.generation.org
-                                </Typography>
-                            </a>
-                        </Box>
+    let footeComponet;
+    if(token != ""){
+     footeComponet = <Grid container
+        direction="row" 
+        justifyContent="center" 
+        alignItems="center">
+            <Box display={'flex'} alignItems="center" className='box1'>
+                <Box >
+                    <Box paddingTop={1}
+                    display="flex" 
+                    alignItems="center" 
+                    justifyContent="center"
+                    >
+                        <Typography 
+                        variant="h5" 
+                        align="center" 
+                        gutterBottom 
+                        className='textos'
+                        >
+                            Acompanhe minhas redes 
+                            </Typography>
+                    </Box>
+                    <Box display="flex" alignItems="center" justifyContent="center">
+                        <a
+                        href="https://github.com/ElizangelaXavierS" 
+                        target="_blank">
+                            <GitHubInIcon className='redes'/>
+                        </a>
+                        
+                        <a 
+                        href="https://www.linkedin.com/in/elizangelaxavier/" 
+                        target="_blank">
+                            <LinkedInIcon className='redes'/>
+                        </a>
                     </Box>
                 </Box>
-            </Grid>
-   
+                <Box className='box2'>
+                    <Box paddingTop={1}>
+                        <Typography 
+                        variant="subtitle2" 
+                        align="center" 
+                        gutterBottom className='textos'
+                        >
+                            © 2020 Copyright:
+                        </Typography>
+                    </Box>
+
+                    <Box >
+                        <a 
+                        href="https://brasil.generation.org"
+                        target="_blank"
+                        className='text-decorator-none'                                                        
+                        >
+                            <Typography 
+                            variant="subtitle2" 
+                            gutterBottom 
+                            className='textos' 
+                            align="center"
+                            >
+                                brasil.generation.org
+                            </Typography>
+                        </a>
+                    </Box>
+                </Box>
+            </Box>
+        </Grid>
+
+        
+    }
+    return(
+    <>
+        { footeComponet}
     </>
     )
 }
