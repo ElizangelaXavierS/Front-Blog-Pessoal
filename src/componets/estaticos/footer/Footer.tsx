@@ -13,9 +13,9 @@ function Footer(){
         (state) => state.token
     );
 
-    let footeComponent;
+    let  footerComponent;
     if(token != ""){
-     footeComponent = <Grid container
+        footerComponent = <Grid container
         direction="row" 
         justifyContent="center" 
         alignItems="center">
@@ -84,7 +84,7 @@ function Footer(){
     }
     return(
     <>
-        { footeComponent}
+        { footerComponent}
     </>
     )
 }
