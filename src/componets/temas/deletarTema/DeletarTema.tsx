@@ -7,6 +7,7 @@ import Tema from '../../../models/Tema';
 import { buscarId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 
@@ -20,7 +21,17 @@ function DeletarTema() {
 
     useEffect(() => {
         if(token === ""){
-            alert("Você precisar está logado!");
+            toast.error('Você precisa está logado', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        } else {
             history("/login");
         }
     }, [token]);
@@ -46,7 +57,17 @@ function DeletarTema() {
                 'Authorization' : token
             }
         });
-        alert("Tema Deletado com Sucesso!")
+        toast.success('Tema deletado com sucesso!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+
     }
 
     function nao (){

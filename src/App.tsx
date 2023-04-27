@@ -14,11 +14,15 @@ import DeletarPostagem from './componets/postagens/deletarPostagem/DeletarPostag
 import DeletarTema from './componets/temas/deletarTema/DeletarTema';
 import Gride from './componets/texte/Gride';
 import { Provider } from 'react-redux';
-import store from './store/Store';
+import store from './store/store';
+import { ToastContainer } from 'react-toastify';
+import'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer/>
       <BrowserRouter>
         <Navbar />
         <div style={{ minHeight: '100vh' }}>

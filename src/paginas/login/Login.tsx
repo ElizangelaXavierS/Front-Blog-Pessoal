@@ -8,6 +8,7 @@ import './Login.css'
 import UserLogin from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -37,10 +38,27 @@ function Login() {
         event.preventDefault()
         try {
             await login('/usuarios/logar', userLogin, setToken)
-            alert('Usuario logado com sucesso')
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         } catch (error) {
-            console.log(error);
-            alert('Usuário ou senha inválidos')
+            toast.success('Usuário ou senha invalidos!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 

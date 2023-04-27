@@ -7,6 +7,7 @@ import { buscar } from '../../../services/Service';
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function ListaPostagem() {
@@ -18,7 +19,17 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert("Você precisar está logado!")
+            toast.info('Você precisar está logado', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        } else {
             history("/login")
         }
     }, [token])
@@ -55,6 +66,9 @@ function ListaPostagem() {
                                 </Typography>
                                 <Typography variant="body2" component="p">               
                                     Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
+                                </Typography>
+                                <Typography variant="body2" component="p">               
+                                    Postado por:{postagem.usuario?.nome}
                                 </Typography>
                             </CardContent>
                             <CardActions>

@@ -4,8 +4,9 @@ import './CadastroUsuario.css'
 import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { ChangeEvent, useEffect, useState } from 'react';
-import UserCadastroUsuario from '../../models/UserCadastroUsuario';
+import UserCadastroUsuario from '../../models/Usuario';
 import { cadastrarUsuario } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -45,12 +46,39 @@ function CadastroUsuario() {
         if (confirmarSenha === usuario.senha) {
             try {
                 await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuarioResult)
-                alert('Usuário cadastrado com sucesso')
+                toast.success('Usuário cadastrado com sucesso!', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             } catch (error) {
-                alert('Por favor, verifique os campos')
+                toast.error('Verifique os campos!', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
         } else {
-            alert('As senhas não coincidem')
+            toast.error('As senhas não são iguais!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
             setConfirmarSenha('')
             setUsuario({
                 ...usuario,
