@@ -7,7 +7,7 @@ import { login } from '../../services/Service';
 import './Login.css'
 import UserLogin from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/actions';
+import { addId, addToken } from '../../store/tokens/actions';
 import { toast } from 'react-toastify';
 
 
@@ -26,6 +26,16 @@ function Login() {
             token: ''
 
         })
+        const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+            {
+                id: 0,
+                nome: '',
+                usuario: '',
+                senha: '',
+                foto: '',
+                token: ''
+    
+            })
 
     function updateModel(event: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
@@ -37,7 +47,7 @@ function Login() {
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
         try {
-            await login('/usuarios/logar', userLogin, setToken)
+            await login('/usuarios/logar', userLogin, setRespUserLogin)
             toast.success('Usuário logado com sucesso!', {
                 position: "top-center",
                 autoClose: 2000,
@@ -61,7 +71,14 @@ function Login() {
                 });
         }
     }
-
+    
+    useEffect(() => {
+        if(respUserLogin.token !== ''){
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))
+            history('/homr');
+        }
+    }, [respUserLogin.token])
     useEffect(() => {
         if (token !== '') {
             dispatch(addToken(token))
