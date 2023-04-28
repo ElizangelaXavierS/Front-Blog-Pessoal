@@ -18,12 +18,12 @@ function CadastroTema() {
     );
     const [tema, setTema] = useState<Tema>({
         id: 0,
-        descricao:''
+        descricao:'',
     })
 
     useEffect(() => {
         if(token === ""){
-            toast.error('Postagem atualizada com sucesso!', {
+            toast.error('Você precisar está logado!', {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -33,7 +33,6 @@ function CadastroTema() {
                 progress: undefined,
                 theme: "light",
                 });
-        } else {
             history("/login");
         }
     }, [token]);
@@ -97,6 +96,7 @@ function CadastroTema() {
                 progress: undefined,
                 theme: "light",
                 });
+            history('/temas')
         }
         back()
     }

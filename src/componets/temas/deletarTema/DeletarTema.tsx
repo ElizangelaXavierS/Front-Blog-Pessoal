@@ -31,9 +31,8 @@ function DeletarTema() {
                 progress: undefined,
                 theme: "light",
                 });
-        } else {
-            history("/login");
-        }
+                history("/login");
+        } 
     }, [token]);
 
     useEffect(() => {

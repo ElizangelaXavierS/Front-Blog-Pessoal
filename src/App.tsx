@@ -17,6 +17,7 @@ import { ToastContainer } from 'react-toastify';
 import'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux';
 import store from './store/Store';
+import Perfil from './componets/perfil/Perfil';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
           <Routes>
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
@@ -38,6 +40,7 @@ function App() {
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
             <Route path="/gride" element={<Gride />} />
+            <Route path="/perfil" element={<Perfil />} />
 
           </Routes>
         </div>
