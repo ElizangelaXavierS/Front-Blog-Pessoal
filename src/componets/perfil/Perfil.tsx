@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { TokenState } from "../../store/tokens/TokensReducer";
 import { useEffect, useState } from "react";
 import Usuario from "../../models/Usuario";
 import { buscarId } from "../../services/Service";
@@ -8,8 +8,8 @@ import { Container, Grid } from "@material-ui/core";
 
 function Perfil(){
 
-const token = useSelector<TokenState, TokenState["token"]>(
-    (state) => state.token
+const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
 );
 
 const usuarioId = useSelector<TokenState, TokenState['id']>(

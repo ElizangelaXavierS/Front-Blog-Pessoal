@@ -6,7 +6,7 @@ interface Usuario{
     usuario: string;
     senha: string;
     foto: string;
-    postagem?:Postagem[]
+    postagem?:Postagem[];
 }
 export default Usuario;
 

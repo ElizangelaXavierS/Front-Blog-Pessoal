@@ -7,7 +7,7 @@ import { login } from '../../services/Service';
 import './Login.css'
 import UserLogin from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
-import { addId, addToken } from '../../store/tokens/actions';
+import { addId, addToken } from '../../store/tokens/Actions';
 import { toast } from 'react-toastify';
 
 
@@ -26,16 +26,16 @@ function Login() {
             token: ''
 
         })
-        const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
-            {
-                id: 0,
-                nome: '',
-                usuario: '',
-                senha: '',
-                foto: '',
-                token: ''
-    
-            })
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            token: ''
+
+        })
 
     function updateModel(event: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
@@ -47,7 +47,7 @@ function Login() {
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
         try {
-            await login('/usuarios/logar', userLogin, setRespUserLogin)
+            await login('/usuarios/logar', userLogin, setRespUserLogin);
             toast.success('Usuário logado com sucesso!', {
                 position: "top-center",
                 autoClose: 2000,
@@ -57,9 +57,9 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
+            });
         } catch (error) {
-            toast.success('Usuário ou senha invalidos!', {
+            toast.error('Usuário ou senha invalidos!', {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -68,23 +68,24 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
+            });
         }
     }
-    
     useEffect(() => {
-        if(respUserLogin.token !== ''){
+        if (token !== "") {
+            dispatch(addToken(token))
+            history("/home");
+        }
+    }, [token]);
+
+    useEffect(() => {
+        if (respUserLogin.token !== '') {
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))
-            history('/homr');
+            history('/home');
         }
     }, [respUserLogin.token])
-    useEffect(() => {
-        if (token !== '') {
-            dispatch(addToken(token))
-            history('/home')
-        }
-    }, [token])
+
 
 
     return (

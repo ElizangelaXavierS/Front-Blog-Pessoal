@@ -6,14 +6,14 @@ import Postagem from '../../../models/Postagem';
 import { buscar } from '../../../services/Service';
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
 
 
 function ListaPostagem() {
-    const [postagens, setPostagem] = useState<Postagem[]>([])
-    const token = useSelector<TokenState, TokenState["token"]>(
-        (state) => state.token
+    const [postagens, setPostagens] = useState<Postagem[]>([])
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
     );
     const history = useNavigate();
 
@@ -28,14 +28,13 @@ function ListaPostagem() {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
-        } else {
+                });    
             history("/login")
         }
-    }, [token])
+    }, [])
 
     async function getPostagem() {
-        await buscar("/postagens", setPostagem, {
+        await buscar("/postagens", setPostagens, {
             headers: {
                 'Authorization': token
             }

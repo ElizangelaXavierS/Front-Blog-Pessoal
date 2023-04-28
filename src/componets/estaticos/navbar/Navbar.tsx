@@ -3,13 +3,13 @@ import { Box } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { addToken } from '../../../store/tokens/actions';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
 import { toast } from 'react-toastify';
 
 function Navbar() {
-    const token = useSelector<TokenState, TokenState["token"]>(
-        (state) => state.token
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
     );
     const history = useNavigate();
     const dispatch = useDispatch();

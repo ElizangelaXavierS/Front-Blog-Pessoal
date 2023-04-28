@@ -6,15 +6,15 @@ import { ChangeEvent, useEffect, useState } from "react";
 import Tema from "../../../models/Tema";
 import { buscarId, post, put } from "../../../services/Service";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
 
 
 function CadastroTema() {
     const history = useNavigate();
     const {id} = useParams<{id:string}>();
-    const token = useSelector<TokenState, TokenState["token"]>(
-        (state) => state.token
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
     );
     const [tema, setTema] = useState<Tema>({
         id: 0,

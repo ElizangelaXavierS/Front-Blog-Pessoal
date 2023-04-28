@@ -13,11 +13,10 @@ import CadastroTema from './componets/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './componets/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './componets/temas/deletarTema/DeletarTema';
 import Gride from './componets/texte/Gride';
-import { Provider } from 'react-redux';
-import store from './store/store';
 import { ToastContainer } from 'react-toastify';
 import'react-toastify/dist/ReactToastify.css';
-
+import { Provider } from 'react-redux';
+import store from './store/Store';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
           <Routes>
-            <Route path="/logim" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />

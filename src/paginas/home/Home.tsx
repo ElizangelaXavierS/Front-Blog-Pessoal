@@ -5,14 +5,14 @@ import TabPostagem from '../../componets/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../componets/postagens/modalpostagem/ModalPostagem';
 import {  Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../store/tokens/tokensReducer';
+import { TokenState } from '../../store/tokens/TokensReducer';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 function Home(){
     const history = useNavigate();
-    const token = useSelector<TokenState, TokenState["token"]>(
-        (state) => state.token
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
     );
 
 useEffect(() => {

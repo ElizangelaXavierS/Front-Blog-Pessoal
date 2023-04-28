@@ -6,13 +6,13 @@ import './ListaTema.css';
 import Tema from '../../../models/Tema';
 import { buscar } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const token = useSelector<TokenState, TokenState["token"]>(
-    (state) => state.token
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
 );
   const history = useNavigate();
 
