@@ -8,20 +8,20 @@ import './App.css'
 import Home from './paginas/home/Home'
 import ListaTema from './componets/temas/listatema/ListaTema';
 import ListaPostagem from './componets/postagens/listapostagem/ListaPostagem';
-import CadastroPostagem from './componets/postagens/cadastroPostagem/CadastroPostagem';
 import CadastroTema from './componets/temas/cadastroTema/CadastroTema';
-import DeletarPostagem from './componets/postagens/deletarPostagem/DeletarPostagem';
+import DeletarPostagem from './componets/postagens/deletarpostagem/DeletarPostagem';
 import DeletarTema from './componets/temas/deletarTema/DeletarTema';
 import Gride from './componets/texte/Gride';
 import { ToastContainer } from 'react-toastify';
 import'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux';
-import store from './store/Store';
+import Store from './store/Store';
 import Perfil from './componets/perfil/Perfil';
+import CadastroPostagem from './componets/postagens/cadastropostagem/CadastroPostagem';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={Store}>
       <ToastContainer/>
       <BrowserRouter>
         <Navbar />

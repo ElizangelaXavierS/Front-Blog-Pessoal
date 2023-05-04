@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core"
 import { Box, Modal} from '@mui/material';
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPostagem.css';
-import CadastroPostagem from '../cadastroPostagem/CadastroPostagem';
+import CadastroPostagem from '../cadastropostagem/CadastroPostagem';
 
 
 

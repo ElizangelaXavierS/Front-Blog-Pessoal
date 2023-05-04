@@ -9,8 +9,8 @@ import { TokenState } from '../../../store/tokens/TokensReducer';
 
 
 function Footer(){
-    const token = useSelector<TokenState, TokenState["token"]>(
-        (state) => state.token
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
     );
 
     let  footerComponent;
